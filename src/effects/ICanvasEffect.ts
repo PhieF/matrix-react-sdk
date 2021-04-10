@@ -33,7 +33,7 @@ export default interface ICanvasEffect {
      * @param {HTMLCanvasElement} canvas The canvas instance as the render target of the animation
      * @param {number} timeout? A timeout that defines the runtime of the animation (defaults to false)
      */
-    start: (canvas: HTMLCanvasElement, timeout?: number) => Promise<void>;
+    start: (canvas: HTMLCanvasElement, roomView: RoomView, timeout?: number) => Promise<void>;
 
     /**
      * Stops the current animation

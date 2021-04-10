@@ -90,6 +90,10 @@ type SnowfallOptions = {
     maxDrift: number;
 }
 
+type WizzOptions = {
+ 
+}
+
 /**
  * This configuration defines room effects that can be triggered by custom message types and emojis
  */
@@ -131,6 +135,16 @@ export const CHAT_EFFECTS: Array<Effect<{ [key: string]: any }>> = [
             maxDrift: 5,
         },
     } as Effect<SnowfallOptions>,
+    {
+        emojis: ['wizz 😱​'],
+        msgType: 'io.element.effect.wizz',
+        command: 'wizz',
+        description: () => _td("Sends a wizz"),
+        fallbackMessage: () => _td("sent a wizz")+" 😱​",
+        options: {
+            
+        },
+    } as Effect<WizzOptions>,
 ];
 
 

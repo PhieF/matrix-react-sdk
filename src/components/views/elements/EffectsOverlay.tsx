@@ -21,9 +21,10 @@ import {CHAT_EFFECTS} from '../../../effects'
 
 interface IProps {
     roomWidth: number;
+    roomView: RoomView;
 }
 
-const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth }) => {
+const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth, roomView }) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
     const effectsRef = useRef<Map<string, ICanvasEffect>>(new Map<string, ICanvasEffect>());
 
@@ -53,7 +54,7 @@ const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth }) => {
             const actionPrefix = 'effects.';
             if (payload.action.indexOf(actionPrefix) === 0) {
                 const effect = payload.action.substr(actionPrefix.length);
-                lazyLoadEffectModule(effect).then((module) => module?.start(canvasRef.current));
+                lazyLoadEffectModule(effect).then((module) => module?.start(canvasRef.current, roomView));
             }
         }
         const dispatcherRef = dis.register(onAction);

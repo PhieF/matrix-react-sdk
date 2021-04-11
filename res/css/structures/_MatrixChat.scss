@@ -35,6 +35,22 @@ limitations under the License.
     height: 100%;
 }
 
+.mx_MatrixTitleBar {
+    height:40px;
+}
+.mx_MatrixTitleBar_title {
+    padding:10px;
+}
+
+.mx_MatrixTitleBar_buttons{
+    top: 0;
+    right: 0;
+    img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
 .mx_MatrixToolbar {
     order: 1;
 

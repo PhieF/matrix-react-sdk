@@ -27,6 +27,7 @@ import {Action} from "../../../dispatcher/actions";
 import {ActionPayload} from "../../../dispatcher/payloads";
 import RightPanelStore from "../../../stores/RightPanelStore";
 import {replaceableComponent} from "../../../utils/replaceableComponent";
+import TitleBar from '../../../components/views/elements/TitleBar';
 
 const ROOM_INFO_PHASES = [
     RightPanelPhases.RoomSummary,
@@ -98,6 +99,7 @@ export default class RoomHeaderButtons extends HeaderButtons {
                 onClick={this.onRoomSummaryClicked}
                 analytics={['Right Panel', 'Room Summary Button', 'click']}
             />,
+            <TitleBar />,
         ];
     }
 }

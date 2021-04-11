@@ -270,6 +270,18 @@ export default abstract class BasePlatform {
         return null;
     }
 
+    minimize(){
+
+    }
+
+    maximize(){
+
+    }
+
+    close(){
+
+    }
+    
     protected getSSOCallbackUrl(fragmentAfterLogin: string): URL {
         const url = new URL(window.location.href);
         url.hash = fragmentAfterLogin || "";

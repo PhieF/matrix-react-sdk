@@ -26,11 +26,13 @@ import {SpaceItem} from "./SpaceTreeLevel";
 import AccessibleTooltipButton from "../elements/AccessibleTooltipButton";
 import {useEventEmitter} from "../../../hooks/useEventEmitter";
 import SpaceStore, {
+    HOME_SPACE,
     UPDATE_INVITED_SPACES,
     UPDATE_SELECTED_SPACE,
     UPDATE_TOP_LEVEL_SPACES,
 } from "../../../stores/SpaceStore";
 import AutoHideScrollbar from "../../structures/AutoHideScrollbar";
+import {SpaceNotificationState} from "../../../stores/notifications/SpaceNotificationState";
 import NotificationBadge from "../rooms/NotificationBadge";
 import {
     RovingAccessibleButton,
@@ -38,15 +40,13 @@ import {
     RovingTabIndexProvider,
 } from "../../../accessibility/RovingTabIndex";
 import {Key} from "../../../Keyboard";
-import {RoomNotificationStateStore} from "../../../stores/notifications/RoomNotificationStateStore";
-import {NotificationState} from "../../../stores/notifications/NotificationState";
 
 interface IButtonProps {
     space?: Room;
     className?: string;
     selected?: boolean;
     tooltip?: string;
-    notificationState?: NotificationState;
+    notificationState?: SpaceNotificationState;
     isNarrow?: boolean;
     onClick(): void;
 }
@@ -218,8 +218,8 @@ const SpacePanel = () => {
                             className="mx_SpaceButton_home"
                             onClick={() => SpaceStore.instance.setActiveSpace(null)}
                             selected={!activeSpace}
-                            tooltip={_t("All rooms")}
-                            notificationState={RoomNotificationStateStore.instance.globalState}
+                            tooltip={_t("Home")}
+                            notificationState={SpaceStore.instance.getNotificationState(HOME_SPACE)}
                             isNarrow={isPanelCollapsed}
                         />
                         { invites.map(s => <SpaceItem

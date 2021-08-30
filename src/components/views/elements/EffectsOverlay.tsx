@@ -17,7 +17,7 @@
 import React, { FunctionComponent, useEffect, useRef } from 'react';
 import dis from '../../../dispatcher/dispatcher';
 import ICanvasEffect from '../../../effects/ICanvasEffect';
-import { CHAT_EFFECTS } from '../../../effects'
+import { CHAT_EFFECTS } from '../../../effects';
 import UIStore, { UI_EVENTS } from "../../../stores/UIStore";
 
 interface IProps {
@@ -33,7 +33,7 @@ const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth, roomView }) => {
         if (!name) return null;
         let effect: ICanvasEffect | null = effectsRef.current[name] || null;
         if (effect === null) {
-            const options = CHAT_EFFECTS.find((e) => e.command === name)?.options
+            const options = CHAT_EFFECTS.find((e) => e.command === name)?.options;
             try {
                 const { default: Effect } = await import(`../../../effects/${name}`);
                 effect = new Effect(options);
@@ -57,7 +57,7 @@ const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth, roomView }) => {
                 const effect = payload.action.substr(actionPrefix.length);
                 lazyLoadEffectModule(effect).then((module) => module?.start(canvasRef.current, roomView));
             }
-        }
+        };
         const dispatcherRef = dis.register(onAction);
         const canvas = canvasRef.current;
         canvas.height = UIStore.instance.windowHeight;
@@ -90,7 +90,7 @@ const EffectsOverlay: FunctionComponent<IProps> = ({ roomWidth, roomView }) => {
                 right: 0,
             }}
         />
-    )
-}
+    );
+};
 
 export default EffectsOverlay;

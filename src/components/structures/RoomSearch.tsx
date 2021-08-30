@@ -30,7 +30,6 @@ import { getKeyBindingsManager, RoomListAction } from "../../KeyBindingsManager"
 import { replaceableComponent } from "../../utils/replaceableComponent";
 import SpaceStore, { UPDATE_SELECTED_SPACE, UPDATE_TOP_LEVEL_SPACES } from "../../stores/SpaceStore";
 
-
 interface IProps {
     isMinimized: boolean;
     onKeyDown(ev: React.KeyboardEvent): void;

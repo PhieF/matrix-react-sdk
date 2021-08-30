@@ -691,10 +691,6 @@ export class RoomListStoreClass extends AsyncStoreWithClient<IState> {
             if (this.algorithm) {
                 this.algorithm.addFilterCondition(filter);
             }
-            // Runtime filters with spaces disable prefiltering for the search all spaces effect
-            if (SettingsStore.getValue("feature_spaces")) {
-                promise = this.recalculatePrefiltering();
-            }
         }
         promise.then(() => this.updateFn.trigger());
     }
@@ -718,10 +714,6 @@ export class RoomListStoreClass extends AsyncStoreWithClient<IState> {
 
             if (this.algorithm) {
                 this.algorithm.removeFilterCondition(filter);
-                // Runtime filters with spaces disable prefiltering for the search all spaces effect
-                if (SettingsStore.getValue("feature_spaces")) {
-                    promise = this.recalculatePrefiltering();
-                }
             }
             // Runtime filters with spaces disable prefiltering for the search all spaces feature
             if (SettingsStore.getValue("feature_spaces")) {

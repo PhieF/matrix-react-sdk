@@ -76,6 +76,7 @@ export const CHAT_EFFECTS: Array<Effect<{ [key: string]: any }>> = [
             
         },
     } as Effect<WizzOptions>,
+    {
         emojis: ["👾", "🌌"],
         msgType: "io.element.effects.space_invaders",
         command: "spaceinvaders",

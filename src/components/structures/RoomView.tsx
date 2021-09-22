@@ -2062,8 +2062,6 @@ export default class RoomView extends React.Component<IProps, IState> {
         const mainClasses = classNames("mx_RoomView", {
             mx_RoomView_inCall: Boolean(activeCall),
         });
-        if(this.roomView.current)
-		this.roomView.current.classNames = mainClasses
         const showChatEffects = SettingsStore.getValue('showChatEffects');
 
         return (

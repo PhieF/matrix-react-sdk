@@ -19,6 +19,7 @@ import dis from '../../../dispatcher/dispatcher';
 import ICanvasEffect from '../../../effects/ICanvasEffect';
 import { CHAT_EFFECTS } from '../../../effects';
 import UIStore, { UI_EVENTS } from "../../../stores/UIStore";
+import RoomView from '../../structures/RoomView'
 
 interface IProps {
     roomWidth: number;

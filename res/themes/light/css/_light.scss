@@ -22,7 +22,7 @@ $tertiary-content: #8D97A5;
 $quaternary-content: #c1c6cd;
 $quinary-content: #E3E8F0;
 $system: #F4F6FA;
-$background: #ffffff;
+$background: #ffffff00;
 $panels: rgba($system, 0.9);
 $panel-selected: rgba($tertiary-content, 0.3);
 $panel-hover: rgba($tertiary-content, 0.1);
@@ -309,11 +309,7 @@ $memberstatus-placeholder-color: $muted-fg-color;
 
 $authpage-bg-color: #2e3649;
 $authpage-modal-bg-color: rgba(245, 245, 245, 0.90);
-<<<<<<< HEAD
-$authpage-body-bg-color: #ffffff00;
-=======
 $authpage-body-bg-color: $background;
->>>>>>> origin/master
 $authpage-focus-bg-color: #dddddd;
 $authpage-lang-color: #4e5054;
 $authpage-primary-color: #232f32;
